@@ -1,5 +1,5 @@
-Package: ShapeRotator
-Type: Package
+Package: 3Dmorpho_tools
+Type: R tools
 Title: A set of tools to help with geometric morphometric analyses of 3D data
 Version: 0.1.0
 Author: Marta Vidal-García <marta.vidalga@gmail.com>
