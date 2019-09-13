@@ -1,4 +1,4 @@
-Package: 3Dmorpho_tools
+Package: morpho.tools.GM
 Type: Package
 Title: A set of functions to help with geometric morphometric analyses of 3D data
 Version: 0.1.0
@@ -7,3 +7,4 @@ Maintainer: Marta Vidal-García <marta.vidalga@gmail.com>
 Description: A set of tools to help with geometric morphometric analyses of 3D data
 License: /
 Encoding: UTF-8
+LazyData: true
