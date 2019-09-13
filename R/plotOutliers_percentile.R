@@ -1,7 +1,7 @@
 
 ### plotOutliers_percentile FUNCTION ###
 
-# This function has been adapted from the plotOutliers function in geomorph, and it has been modified to select for percentiles and save plots
+# This function has been adapted from the plotOutliers function in geomorph(Adams et al., 2018), and it has been modified to select for percentiles and save plots
 # It will check for outliers at the selected percentile (e.g. 95%, save the plots - if chosen -, and return a list with:
     # 1. all the Procrustes distances to the mean shape
     # 2. only Proc dist. from the potential outliers)
