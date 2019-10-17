@@ -36,13 +36,6 @@
 #'   
 #' @author Marta Vidal-Garcia
 #' @references Adams, D. C., M. L. Collyer, and A. Kaliontzopoulou. 2018. Geomorph: Software for geometric morphometric analysis. R package version 3.0.6. Available at http://CRAN.R-project.org/package=geomorph.
-### plotOutliers_percentile FUNCTION ###
-
-# This function has been adapted from the plotOutliers function in geomorph(Adams et al., 2018), and it has been modified to select for percentiles and save plots
-# It will check for outliers at the selected percentile (e.g. 95%, save the plots - if chosen -, and return a list with:
-    # 1. all the Procrustes distances to the mean shape
-    # 2. only Proc dist. from the potential outliers)
-    # 3. a plot of like in plotOutliers and an histogram of the Procrustes distances to mean shape
 
 plotOutliers_percentile <- function (A, groups = NULL, inspect.outliers = FALSE, percentile, save.plot = FALSE) {
   if (length(dim(A)) != 3) {
@@ -140,5 +133,3 @@ plotOutliers_percentile <- function (A, groups = NULL, inspect.outliers = FALSE,
     par(mfrow=c(1,1))
   return(list("All_Proc_d" = values, "Proc_d_percentile" = percentile_points))
 }
-
-
