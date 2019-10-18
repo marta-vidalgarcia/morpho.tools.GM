@@ -53,6 +53,6 @@ Available at http://CRAN.R-project.org/package=geomorph.
 
 }
 \author{
-Marta Vidal-Garcia (marta.vidalga@gmail.com)
+Marta Vidal-Garcia \email{marta.vidalga@gmail.com}
 }
 
