@@ -8,7 +8,7 @@ This function has been adapted from the plotOutliers function in geomorph, and i
 \usage{
 plotOutliers_percentile(A, groups = NULL, inspect.outliers = FALSE, percentile, save.plot = FALSE)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{A}{
 Same as in the plotOutliers function in geomorph. An object of the class "array" that contains Procrustes shape variables for 'n' specimens
@@ -39,10 +39,6 @@ The second plot is a histogram, that shows the frequency of different prouped va
 This function is highly based on the plotOutliers function in geomorph (Adams et al., 2018), and it has been modified to select for percentiles and save plots (including a histogram). It will check for outliers at the selected percentile (e.g. 95%, save the plots - if chosen), and return a list with: (1) all the Procrustes distances to the mean shape, (2) only Procustes distances from the potential outliers, (3) a plot of like in plotOutliers function in geomorph (Adams et al., 2018) and an histogram of the Procrustes distances to mean shape.
 }
 
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-
 \examples{
 species <- c("sp_A", "sp_A", "sp_B", "sp_A", "sp_A", "sp_B", "sp_B", "sp_A", "sp_A", "sp_A", "sp_A")
 # Only visualise the 
@@ -59,7 +55,4 @@ Available at http://CRAN.R-project.org/package=geomorph.
 \author{
 Marta Vidal-Garcia (marta.vidalga@gmail.com)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
