@@ -3,7 +3,7 @@
 #' @alias plotOutliers_percentile
 #' 
 #' @description
-#'   This function has been adapted from the plotOutliers function in geomorph, and it has been modified to select for percentiles and save plots
+#'   This function has been adapted from the plotOutliers function in geomorph. It has been modified to select for percentiles and save plots.
 #'   
 #' @usage
 #'   plotOutliers_percentile(A, groups = NULL, inspect.outliers = FALSE, percentile, save.plot = FALSE)

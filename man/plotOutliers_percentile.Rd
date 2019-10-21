@@ -7,7 +7,7 @@
 plotOutliers_percentile(A, groups = NULL, inspect.outliers = FALSE, percentile, save.plot = FALSE)
 }
 \description{
-This function has been adapted from the plotOutliers function in geomorph, and it has been modified to select for percentiles and save plots
+This function has been adapted from the plotOutliers function in geomorph. It has been modified to select for percentiles and save plots.
 }
 \details{
 This function is highly based on the plotOutliers function in geomorph (Adams et al., 2018), and it has been modified to select for percentiles and save plots (including a histogram). It will check for outliers at the selected percentile (e.g. 95).
