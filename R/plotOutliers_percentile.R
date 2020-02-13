@@ -44,12 +44,12 @@ plotOutliers_percentile <- function (A, groups = NULL, inspect.outliers = FALSE,
   if (is.null(groups)) {
     groups = factor(rep("All Specimens", dim(A)[3]))
   }
-  mean_sym <- mshape(A) # estimate mean shape from the rotated configurations
+  mean_sym <- geomorph:::mshape(A) # estimate mean shape from the rotated configurations
   dist <- ShapeDist(A, mean_sym) # Calculate Procrustes distance to the mean
   names(dist) <- dimnames(A)[[3]]
   N_percentile <- quantile(dist, as.numeric(percentile))
   res <- lapply(levels(groups), function(j) {
-    mn <- matrix(t(mshape(A[, , which(groups == j)])), nrow = 1)
+    mn <- matrix(t(geomorph:::mshape(A[, , which(groups == j)])), nrow = 1)
     A.d <- two.d.array(A[, , which(groups == j)])
     d <- NULL
     for (i in 1:nrow(A.d)) {
@@ -104,7 +104,7 @@ plotOutliers_percentile <- function (A, groups = NULL, inspect.outliers = FALSE,
       if (inspect.outliers == TRUE) {
         out.config <- names(D)[which(D >= P_percentile)]
         for (oc in out.config) {
-          plotRefToTarget(mshape(A), matrix(A.d[oc, ], 
+          plotRefToTarget(geomorph:::mshape(A), matrix(A.d[oc, ], 
                                             ncol = dim(A)[2], byrow = T), method = "vector", 
                           label = TRUE)
           title(main = paste("group: ", j, ", specimen: ", 
