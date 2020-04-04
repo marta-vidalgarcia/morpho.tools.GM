@@ -13,7 +13,7 @@ tag2lm(dir = NULL, ID = NULL, string_del = NULL)
 This function inputs *tag files into an array of dimensions p, k, n
 }
 \details{
-This function is highly based on the plotOutliers function in geomorph (Adams et al., 2018), and it has been modified to select for percentiles and save plots (including a histogram). It will check for outliers at the selected percentile (e.g. 95).
+This function inputs *tag files into an array of dimensions (p, k, n), in which p is the number of landmarks, k = 3 (number of dimensions), and n is the number of specimens.
 }
 \examples{
 # array <- tag2lm()
