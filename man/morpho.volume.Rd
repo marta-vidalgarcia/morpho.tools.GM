@@ -6,11 +6,16 @@
 \usage{
 morpho.volume(x, groups)
 }
+\arguments{
+\item{x}{Dataset with three columns (3 dimensions in the morphospace)}
+
+\item{groups}{An optional factor defining groups}
+}
+\value{
+This function returns a list with two objects. The first object is the volume for the whole dataset. If groups have been selected, then it also returns a data.frame with the volumes by group and the percentage of the total volume occupied in the morphospace.
+}
 \description{
 This function returns the volume (and volumes by groups) of a morphospace.
-}
-\details{
-This function returns the volume (and volumes by groups) occupied in the morphospace.
 }
 \examples{
     x <- pc.scores[,1:3] # first three PC scores
