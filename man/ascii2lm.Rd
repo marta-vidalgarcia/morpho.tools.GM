@@ -7,7 +7,7 @@
 ascii2lm(dir = NULL, ID = NULL, string_del = NULL)
 }
 \arguments{
-\item{dir}{Optional argument. Directory where the *.ascii files are. Default (NULL) is the current working directory.}
+\item{dir}{Optional argument. Directory where the .ascii or .landmarkAscii files are. Default (NULL) is the current working directory.}
 
 \item{ID}{Optional argument for specimens IDs. The default (NULL) is the file names.}
 
@@ -17,13 +17,13 @@ ascii2lm(dir = NULL, ID = NULL, string_del = NULL)
 This function returns an array of dimensions (p, k, n), in which p is the number of landmarks, k = 3 (number of dimensions), and n is the number of specimens.
 }
 \description{
-This function inputs landmark *.ascii files (from Amira or Avizo) into an array of dimensions p, k, n
+This function inputs landmark .ascii or .landmarkAscii files (from Amira or Avizo) into an array of dimensions p, k, n
 }
 \examples{
 # array <- ascii2lm()
 # If we have *.tag file in another directory and with the suffix "skull"
-# For example: "spec1_skull.ascii", "spec2_skull.ascii", "spec3_skull.ascii", etc.
-dir <- "~/Documents/skull_LMs")
+# For example: "spec1_skull.ascii", "spec2_skull.landmarkAscii", "spec3_skull.ascii", etc.
+# dir <- "~/Documents/skull_LMs")
 # skull_array <- ascii2lm(dir = skull_dir, string_del="skull")
   
 }

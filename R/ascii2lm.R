@@ -2,12 +2,12 @@
 #' @title ascii2lm
 #' 
 #' @description
-#'   This function inputs landmark *.ascii files (from Amira or Avizo) into an array of dimensions p, k, n
+#'   This function inputs landmark .ascii or .landmarkAscii files (from Amira or Avizo) into an array of dimensions p, k, n
 #'   
 #' @usage
 #'   ascii2lm(dir = NULL, ID = NULL, string_del = NULL)
 #'   
-#' @param dir Optional argument. Directory where the *.ascii files are. Default (NULL) is the current working directory.
+#' @param dir Optional argument. Directory where the .ascii or .landmarkAscii files are. Default (NULL) is the current working directory.
 #' 
 #' @param ID Optional argument for specimens IDs. The default (NULL) is the file names.
 #' 
@@ -18,7 +18,7 @@
 #' @examples
 #' # array <- ascii2lm()
 #' # If we have *.tag file in another directory and with the suffix "skull"
-#' # For example: "spec1_skull.ascii", "spec2_skull.ascii", "spec3_skull.ascii", etc.
+#' # For example: "spec1_skull.ascii", "spec2_skull.landmarkAscii", "spec3_skull.ascii", etc.
 #' # dir <- "~/Documents/skull_LMs")
 #' # skull_array <- ascii2lm(dir = skull_dir, string_del="skull")
 #'   
@@ -34,17 +34,32 @@ ascii2lm <- function(dir = NULL, ID = NULL, string_del = NULL){
   else{
     path <- dir
   }
-  ascii_list <- dir(path = path, pattern="*.ascii")
-  n_land <- vector("numeric", length=length(ascii_list))
-  for (i in 1:length(ascii_list)){
+  ascii_list <- dir(path = path, pattern="ascii|landmarkAscii")
+  n_land <- length(count.fields(ascii_list[[1]])) -7
+  for (i in 2:length(ascii_list)){
     n_land[i] <- length(count.fields(ascii_list[[i]])) -7
   }
   if (is.null(ID) == TRUE){
+    dimnames_ascii <- vector(mode="character", length = length(ascii_list))
     if (is.null(string_del) == TRUE){
-      dimnames_ascii <- gsub(".ascii", "", ascii_list)
+      for (i in 1:length(ascii_list)){
+        if (isTRUE(grep(".landmarkAscii", ascii_list[i]) == 1)){
+          dimnames_ascii[i] <- gsub(".landmarkAscii", "", ascii_list[i])
+        }
+        if (isTRUE(grep(".ascii", ascii_list[i]) == 1)){
+          dimnames_ascii[i] <- gsub(".ascii", "", ascii_list[i])
+        }
+      }
     }
     else{
-      dimnames_ascii <- gsub(string_del, "", gsub(".ascii", "", ascii_list))
+      for (i in 1:length(ascii_list)){
+        if (grep(".landmarkAscii", ascii_list[i]) == 1){
+          dimnames_ascii[i] <- gsub(string_del, "", gsub(".landmarkAscii", "", ascii_list[i]))
+        }
+        if (grep(".ascii", ascii_list[i]) == 1){
+          dimnames_ascii[i] <- gsub(string_del, "", gsub(".ascii", "", ascii_list[i]))
+        }
+      }
     }
   }
   else{
