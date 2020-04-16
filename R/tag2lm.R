@@ -20,5 +20,6 @@
 
 tag2lm <- function(file){
   lm_matrix <- suppressWarnings(read.table(file = file, skip = 4, sep = " ", header=F))[, 2:4]
+  colnames(lm_matrix) <- c("x", "y", "z")
   return(lm_matrix)
 }
