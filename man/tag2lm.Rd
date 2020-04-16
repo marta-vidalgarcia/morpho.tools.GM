@@ -4,27 +4,19 @@
 \alias{tag2lm}
 \title{tag2lm}
 \usage{
-tag2lm(dir = NULL, ID = NULL, string_del = NULL)
+tag2lm(file)
 }
 \arguments{
-\item{dir}{Optional argument. Directory where the *.ascii files are. Default (NULL) is the current working directory.}
-
-\item{ID}{Optional argument for specimens IDs. The default (NULL) is the file names.}
-
-\item{string_del}{Optional argument. Indicates pattern in the specimens names to be deleted. Use only if ID = NULL.}
+\item{file}{MINC *.tag file to import.}
 }
 \value{
-This function returns an array of dimensions (p, k, n), in which p is the number of landmarks, k = 3 (number of dimensions), and n is the number of specimens.
+This function returns matrix with the landmark coordinates (x, y, z)
 }
 \description{
-This function inputs *tag files into an array of dimensions p, k, n
+This function inputs a single *tag file into an matrix with the landmark coordinates (x, y, z)
 }
 \examples{
-# array <- tag2lm()
-# If we have *.tag file in another directory and with the suffix "skull"
-# For example: "spec1_skull.tag", "spec2_skull.tag", "spec3_skull.tag", etc.
-dir <- "~/Documents/skull_LMs")
-# skull_array <- tag2lm(dir = skull_dir, string_del="skull")
+# specimen1 <- tag2lm("specimen1.tag")
   
 }
 \author{
