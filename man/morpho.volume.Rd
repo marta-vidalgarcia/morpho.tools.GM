@@ -18,10 +18,10 @@ This function returns a list with two objects. The first object is the volume fo
 This function returns the volume (and volumes by groups) of a morphospace.
 }
 \examples{
-    x <- pc.scores[,1:3] # first three PC scores
-    groups <- c("sp_A", "sp_A", "sp_B", "sp_A", "sp_A", "sp_B", "sp_B", "sp_A", "sp_A", "sp_A", "sp_A")
-    names(groups) <- row.names(x)
-    morpho.volume(x, groups) 
+   # x <- pc.scores[,1:3] # first three PC scores
+   # groups <- c("sp_A", "sp_A", "sp_B", "sp_A", "sp_A", "sp_B", "sp_B", "sp_A", "sp_A", "sp_A", "sp_A")
+   # names(groups) <- row.names(x)
+   # morpho.volume(x, groups) 
   
 }
 \author{

@@ -27,9 +27,9 @@ This function has been adapted from the plotOutliers function in geomorph. It ha
 This function is highly based on the plotOutliers function in geomorph (Adams et al., 2018), and it has been modified to select for percentiles and save plots (including a histogram). It will check for outliers at the selected percentile (e.g. 95).
 }
 \examples{
-   species <- c("sp_A", "sp_A", "sp_B", "sp_A", "sp_A", "sp_B", "sp_B", "sp_A", "sp_A", "sp_A", "sp_A")
-    plotOutliers_percentile(GPA$coords, percentile = 0.95) 
-    plotOutliers_percentile(GPA$coords, percentile = 0.99, groups = species, save.plot = TRUE)
+ # species <- c("sp_A", "sp_A", "sp_B", "sp_A", "sp_A", "sp_B", "sp_B", "sp_A", "sp_A", "sp_A", "sp_A")
+ # plotOutliers_percentile(GPA$coords, percentile = 0.95) 
+ # plotOutliers_percentile(GPA$coords, percentile = 0.99, groups = species, save.plot = TRUE)
   
 }
 \references{

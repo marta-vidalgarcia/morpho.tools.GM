@@ -4,7 +4,7 @@
 \alias{tag2array}
 \title{tag2array}
 \usage{
-tag2array(dir = NULL, ID = NULL, string_del = NULL)
+tag2array(dir = NULL, ID = NULL, string_del = NULL, propagated = FALSE, save.txt = FALSE)
 }
 \arguments{
 \item{dir}{Optional argument. Directory where the *.ascii files are. Default (NULL) is the current working directory.}
@@ -12,6 +12,10 @@ tag2array(dir = NULL, ID = NULL, string_del = NULL)
 \item{ID}{Optional argument for specimens IDs. The default (NULL) is the file names.}
 
 \item{string_del}{Optional argument. Indicates pattern in the specimens names to be deleted. Use only if ID = NULL.}
+
+\item{propagated}{Optional argument indicating if the landmarks have been propagated (extra line). The default is FALSE.}
+
+\item{save.txt}{Optional argument. Indicates whether to also save *.txt files with the landmark coordinates.}
 }
 \value{
 This function returns an array of dimensions (p, k, n), in which p is the number of landmarks, k = 3 (number of dimensions), and n is the number of specimens.
