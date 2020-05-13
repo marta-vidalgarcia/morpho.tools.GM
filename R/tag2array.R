@@ -79,7 +79,7 @@ tag2array <- function(dir = NULL, ID = NULL, string_del = NULL, propagated = FAL
   }
   if (isTRUE(save.txt) == TRUE){
     for (i in 1:dim(LM_array)[3]){
-      write.table(LM_array[,,i], paste0(dimnames(LM_array)[[3]][i], ".txt"), col.names = FALSE)
+      write.table(LM_array[,,i], paste0(dimnames(LM_array)[[3]][i], ".txt"), col.names = FALSE, row.names = FALSE)
     }
   }
   return(LM_array)
