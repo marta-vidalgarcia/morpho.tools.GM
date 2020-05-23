@@ -72,9 +72,9 @@ tag2array <- function(dir = NULL, ID = NULL, string_del = NULL, propagated = FAL
   }
   else{
     for (i in 1:length(tag_list)){
-      LM_array[,1,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 4, sep = " ", header=F))[, 2]
-      LM_array[,2,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 4, sep = " ", header=F))[, 3]
-      LM_array[,3,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 4, sep = " ", header=F))[, 4]
+      LM_array[,1,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 4, sep = " ", header=F))[, 1]
+      LM_array[,2,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 4, sep = " ", header=F))[, 2]
+      LM_array[,3,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 4, sep = " ", header=F))[, 3]
     }
   }
   if (isTRUE(save.txt) == TRUE){
