@@ -44,7 +44,7 @@ tag2array <- function(dir = NULL, ID = NULL, string_del = NULL, propagated = FAL
       n_land[i] <- length(count.fields(tag_list[[i]])) -4
     }
     else {
-      n_land[i] <- length(count.fields(tag_list[[i]])) -3
+      n_land[i] <- length(count.fields(tag_list[[i]])) -4 # doublecheck if this should be 3
     }
   }
   if (is.null(ID) == TRUE){
