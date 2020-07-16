@@ -44,7 +44,7 @@ tag2array <- function(dir = NULL, ID = NULL, string_del = NULL, propagated = FAL
       n_land[i] <- length(count.fields(tag_list[[i]])) -4
     }
     else {
-      n_land[i] <- length(count.fields(tag_list[[i]])) -4 # doublecheck if this should be 3
+      n_land[i] <- length(count.fields(tag_list[[i]])) -3 # doublecheck if this should be 3 or 4
     }
   }
   if (is.null(ID) == TRUE){
@@ -72,9 +72,9 @@ tag2array <- function(dir = NULL, ID = NULL, string_del = NULL, propagated = FAL
   }
   else{
     for (i in 1:length(tag_list)){
-      LM_array[,1,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 4, sep = " ", header=F))[, 1]
-      LM_array[,2,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 4, sep = " ", header=F))[, 2]
-      LM_array[,3,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 4, sep = " ", header=F))[, 3]
+      LM_array[,1,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 5, sep = " ", header=F))[, 1] #4 or 5 to skip?
+      LM_array[,2,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 5, sep = " ", header=F))[, 2]
+      LM_array[,3,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 5, sep = " ", header=F))[, 3]
     }
   }
   if (isTRUE(save.txt) == TRUE){
