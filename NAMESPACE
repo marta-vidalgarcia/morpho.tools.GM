@@ -3,5 +3,6 @@
 export(ascii2lm)
 export(morpho.volume)
 export(plotOutliers_percentile)
+export(pp2array)
 export(tag2array)
 export(tag2lm)
