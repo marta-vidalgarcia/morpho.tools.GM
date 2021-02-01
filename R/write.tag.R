@@ -37,7 +37,7 @@ write.tag <- function(mat, file){
   }
   file_tag <- c("MNI Tag Point File",
                 "Volumes = 1;",
-                paste0("% Volume 1 points converted with write.tag() ", getwd(), "/", file),
+                paste0("% Volume 1 points converted with morpho.tools.GM::write.tag() ", "/", file),
                 "",
                 "Points =",
                 mat_tag)
