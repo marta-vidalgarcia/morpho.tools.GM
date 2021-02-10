@@ -69,7 +69,6 @@ tag2array <- function(dir = NULL, ID = NULL, string_del = NULL, propagated = FAL
       LM_array[,1,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 5, sep = " ", header=F))[, 2]
       LM_array[,2,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 5, sep = " ", header=F))[, 3]
       LM_array[,3,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 5, sep = " ", header=F))[, 4]
-      LM_type[i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 5, sep = " ", header=F))[, 8]
     }
   }
   else{
@@ -77,7 +76,6 @@ tag2array <- function(dir = NULL, ID = NULL, string_del = NULL, propagated = FAL
       LM_array[,1,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 4, sep = " ", header=F))[, 2]
       LM_array[,2,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 4, sep = " ", header=F))[, 3]
       LM_array[,3,i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 4, sep = " ", header=F))[, 4]
-      LM_type[i] <- suppressWarnings(read.table(file = tag_list[[i]], skip = 5, sep = " ", header=F))[, 8]
     }
   }
   if (isTRUE(save.txt) == TRUE){
@@ -85,5 +83,5 @@ tag2array <- function(dir = NULL, ID = NULL, string_del = NULL, propagated = FAL
       write.table(LM_array[,,i], paste0(dimnames(LM_array)[[3]][i], ".txt"), col.names = FALSE, row.names = FALSE)
     }
   }
-  return(c(LM_array, LM_type))
+  return(LM_array)
 }
