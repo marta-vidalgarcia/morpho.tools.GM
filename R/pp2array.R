@@ -22,13 +22,13 @@
 #' # If we have other *.pp files in another directory and with the suffix "skull"
 #' # For example: "spec1_skull.pp", "spec2_skull.pp", "spec3_skull.pp", etc.
 #' # dir <- "~/Documents/skull_LMs")
-#' # skull_array <- pp2array(dir = skull_dir, string_del="skull")
+#' # skull_array <- pp2array(dir = skull_dir, string_del="_skull", save.tag = TRUE) # will save *.tag landmark files
 #'
 #' @author Marta Vidal-Garcia
 #' @export
 #'
 
-pp2array <- function(dir = NULL, ID = NULL, string_del = NULL, save.txt = FALSE){
+pp2array <- function(dir = NULL, ID = NULL, string_del = NULL, save.txt = FALSE, save.tag = FALSE){
   if (is.null(dir) == TRUE) {
     path <- getwd()
   } else {
@@ -66,6 +66,11 @@ pp2array <- function(dir = NULL, ID = NULL, string_del = NULL, save.txt = FALSE)
   if (isTRUE(save.txt) == TRUE){
     for (i in 1:dim(LM_array)[3]){
       write.table(LM_array[,,i], paste0(dimnames(LM_array)[[3]][i], ".txt"), col.names = FALSE, row.names = FALSE)
+    }
+  }
+  if (isTRUE(save.tag) == TRUE){
+    for (i in 1:dim(LM_array)[3]){
+      write.tag(LM_array[,,i], paste0(dimnames(LM_array)[[3]][i], ".txt"))
     }
   }
   setwd(path)

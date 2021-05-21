@@ -26,7 +26,7 @@ This function inputs *pp files into an array of dimensions p, k, n
 # If we have other *.pp files in another directory and with the suffix "skull"
 # For example: "spec1_skull.pp", "spec2_skull.pp", "spec3_skull.pp", etc.
 # dir <- "~/Documents/skull_LMs")
-# skull_array <- pp2array(dir = skull_dir, string_del="skull")
+# skull_array <- pp2array(dir = skull_dir, string_del="_skull", save.tag = TRUE) # will save *.tag landmark files
 
 }
 \author{
