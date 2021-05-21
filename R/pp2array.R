@@ -70,7 +70,7 @@ pp2array <- function(dir = NULL, ID = NULL, string_del = NULL, save.txt = FALSE,
   }
   if (isTRUE(save.tag) == TRUE){
     for (i in 1:dim(LM_array)[3]){
-      write.tag(LM_array[,,i], paste0(dimnames(LM_array)[[3]][i], ".txt"))
+      write.tag(LM_array[,,i], paste0(dimnames(LM_array)[[3]][i], ".tag"))
     }
   }
   setwd(path)
