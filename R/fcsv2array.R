@@ -65,7 +65,7 @@ fcsv2array <- function(dir = NULL, pattern = NULL, ID = NULL, string_del = NULL,
   LM_array <- array(data = NA, dim = c(n_land[1], 3, length(fcsv_list)))
   dimnames(LM_array)[[3]] <- dimnames_fcsv
   for (i in 1:length(fcsv_list)){
-    LM_array[,,i] <- as.matrix(read.csv(file = fcsv_list[i], sep = ",", skip = 3, row.names = 1, header = FALSE)[,1:3])
+    LM_array[,,i] <- as.matrix(read.csv(file = fcsv_list[i], sep = ",", skip = 3, header = FALSE)[,2:4])
   }
   if (isTRUE(save.txt) == TRUE){
     for (i in 1:dim(LM_array)[3]){
