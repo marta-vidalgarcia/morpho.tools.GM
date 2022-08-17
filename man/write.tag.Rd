@@ -15,10 +15,10 @@ write.tag(mat, file)
 This function saves a *.tag file from a matrix
 }
 \description{
-This function inputs *tag files into an array of dimensions p, k, n
+This function exports a matrix to a *.tag file
 }
 \examples{
-# mat <- matrix(c(1,2,3, 4,5,6, 7,8,9, 10,11,12), nrow = 4, ncol = 3)
+# mat <- matrix(1:12), nrow = 4, ncol = 3)
 # write.tag(mat, "my_matrix.tag")
   
 }
