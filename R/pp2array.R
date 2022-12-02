@@ -15,6 +15,8 @@
 #'
 #' @param save.txt Optional argument. Indicates whether to also save *.txt files with the landmark coordinates.
 #'
+#' @param write.tag Optional argument. Indicates whether to also save *.tag files with the landmark coordinates.
+#'
 #' @return This function returns an array of dimensions (p, k, n), in which p is the number of landmarks, k = 3 (number of dimensions), and n is the number of specimens.
 #'
 #' @examples
