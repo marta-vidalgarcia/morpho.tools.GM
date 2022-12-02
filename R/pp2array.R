@@ -5,7 +5,7 @@
 #'   This function inputs *pp files into an array of dimensions p, k, n
 #'
 #' @usage
-#'   pp2array(dir = NULL, ID = NULL, string_del = NULL, save.txt = FALSE)
+#'   pp2array(dir = NULL, ID = NULL, string_del = NULL, save.txt = FALSE, write.tag = FALSE)
 #'
 #' @param dir Optional argument. Directory where the *.pp files are. Default (NULL) is the current working directory.
 #'
