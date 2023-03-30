@@ -5,7 +5,7 @@
 #'   This function inputs *pp files into an array of dimensions p, k, n
 #'
 #' @usage
-#'   pp2array(dir = NULL, ID = NULL, string_del = NULL, save.txt = FALSE)
+#'   pp2array(dir = NULL, ID = NULL, string_del = NULL, save.txt = FALSE, write.tag = FALSE)
 #'
 #' @param dir Optional argument. Directory where the *.pp files are. Default (NULL) is the current working directory.
 #'
@@ -14,6 +14,8 @@
 #' @param string_del Optional argument. Indicates pattern in the specimens names to be deleted. Use only if ID = NULL.
 #'
 #' @param save.txt Optional argument. Indicates whether to also save *.txt files with the landmark coordinates.
+#'
+#' @param write.tag Optional argument. Indicates whether to also save *.tag files with the landmark coordinates.
 #'
 #' @return This function returns an array of dimensions (p, k, n), in which p is the number of landmarks, k = 3 (number of dimensions), and n is the number of specimens.
 #'
@@ -69,9 +71,7 @@ pp2array <- function(dir = NULL, ID = NULL, string_del = NULL, save.txt = FALSE,
     }
   }
   if (isTRUE(save.tag) == TRUE){
-    for (i in 1:dim(LM_array)[3]){
-      write.tag(LM_array[,,i], paste0(dimnames(LM_array)[[3]][i], ".tag"))
-    }
+    write.tag(LM_array, paste0(dimnames(LM_array)[[3]], ".tag"))
   }
   setwd(path)
   return(LM_array)
